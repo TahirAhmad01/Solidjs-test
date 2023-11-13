@@ -1,7 +1,12 @@
 import { createSignal } from "solid-js";
+import { createEffect } from "solid-js";
 
 function App() {
   const [count, setCount] = createSignal(0);
+
+  createEffect(() => {
+    console.log("The count is now", count());
+  });
 
   return (
     <div className="max-w-screen-xl mx-auto py-10">
